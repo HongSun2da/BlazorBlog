@@ -1,0 +1,17 @@
+﻿@page "/posts/{url}"
+
+@if (CurrentPost == null)
+{
+    <span>Getting that blog post from the service...</span>
+}
+else
+{
+    @*<div class="post-img" style="background-image: url('@(CurrentPost.Image ?? placeholderImage)');" />*@
+    <img src="@(CurrentPost.Image ?? placeholderImage)" width="200">
+
+    <h3>@CurrentPost.Title</h3>
+
+    <div>
+        @CurrentPost.Content
+    </div>
+}
